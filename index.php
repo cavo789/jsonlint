@@ -27,7 +27,7 @@ define('REPO', 'https://github.com/cavo789/jsonlint');
 $json = '{"name":"John","age":30,"cars":["Ford","BMW","Fiat"],' .
     '"places":["Africa","America","Asia","Australia"]}';
 
-    // Get the GitHub corner
+// Get the GitHub corner
 $github = '';
 if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
     $github = str_replace('%REPO%', REPO, file_get_contents($cat));
