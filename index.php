@@ -1,6 +1,7 @@
 <?php
 
-declare(strict_types=1);
+// Only valid if PHP7 or greater
+//declare(strict_types=1);
 
 /**
  * AUTHOR : AVONTURE Christophe
@@ -20,9 +21,17 @@ declare(strict_types=1);
  * Get the code on GitHub: https://github.com/cavo789/jsonlint
  */
 
+define('REPO', 'https://github.com/cavo789/jsonlint');
+
  // Sample content
 $json = '{"name":"John","age":30,"cars":["Ford","BMW","Fiat"],' .
     '"places":["Africa","America","Asia","Australia"]}';
+
+    // Get the GitHub corner
+$github = '';
+if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
+    $github = str_replace('%REPO%', REPO, file_get_contents($cat));
+}
 
 ?>
 
@@ -48,6 +57,7 @@ $json = '{"name":"John","age":30,"cars":["Ford","BMW","Fiat"],' .
         <link rel="stylesheet" href="libs/jquery.json-view.css">
     </head>
     <body>
+        <?php echo $github; ?>
         <div class="container">
             <div class="page-header"><h1>JSONLint & Pretty print</h1></div>
             <div class="container">
