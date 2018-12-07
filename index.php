@@ -63,21 +63,21 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
             <div class="container">
                 <div class="form-group">
                     <details>
-						<summary>How to use?</summary>
-						<div class="row">
-								<div class="col-sm">
-									<ul>
-										<li>Copy/Paste your JSON content in the textbox below.</li>
+                        <summary>How to use?</summary>
+                        <div class="row">
+                                <div class="col-sm">
+                                    <ul>
+                                        <li>Copy/Paste your JSON content in the textbox below.</li>
                                         <li>Make a choice between "HTML with colors" and "With expand/collapse feature"</li>
-										<li>Click on the Lint button</li>
-									</ul>
-								</div>
-								<div class="col-sm">
-									<img height="300px" src="https://raw.githubusercontent.com/cavo789/jsonlint/master/images/demo.gif" alt="Demo">
-								</div>
-							</div>
-						</div>
-					</details>
+                                        <li>Click on the Lint button</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm">
+                                    <img src="https://raw.githubusercontent.com/cavo789/jsonlint/master/images/demo.gif" alt="Demo">
+                                </div>
+                            </div>
+                        </div>
+                    </details>
 
                     <label for="json">Copy/Paste your JSON content in the textbox below then click on the Lint button:</label>
                     <textarea class="form-control" rows="5" id="json" name="json"><?php echo $json; ?></textarea>
