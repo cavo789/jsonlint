@@ -8,19 +8,11 @@ JSONLint will try to solve basic errors like JSON key without quotes.
 
 Just copy/paste your JSON string into the text box as illustrated here below.
 
-![jsonlint](images/jsonlint.png)
-
 Make a choice between: do you want a HTML return with things put in colors (keys and values) or a hierarchic view where you'll be able to collapse or expand levels.
 
-When the choice is made, press the `Lint` button:
+When the choice is made, press the `Lint` button.
 
-**Showing the result in colors**
-
-![With colors](images/colors.png)
-
-**Showing the result with expand / collapse feature**
-
-![With expand / collapse feature](images/collapse.png)
+![jsonlint](images/demo.gif)
 
 ### Invalid JSON
 
@@ -28,9 +20,7 @@ When the string is invalid like in `{hello:"world","places":["Africa","America",
 
 ![invalid](images/invalid.png)
 
-By clicking once more on the `Lint` button, Javascript will thus first `eval()` the string and try to convert it in a valid JSON object. If this can be done, the input string will be reseted to the correct value and you'll get the pretty version below the button like illustrated below.
-
-![validated](images/validated.png)
+By clicking once more on the `Lint` button, Javascript will thus first `eval()` the string and try to convert it in a valid JSON object. If this can be done, the input string will be updated to the correct value and you'll get the pretty version.
 
 Note: except for displaying the form (with PHP), everything is done on client side by Javascript. There is no more interaction with your server once the form is displayed.
 

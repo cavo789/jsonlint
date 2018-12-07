@@ -4,7 +4,7 @@
 //declare(strict_types=1);
 
 /**
- * AUTHOR : AVONTURE Christophe
+ * AUTHOR : AVONTURE Christophe.
  *
  * Written date : 6 october 2018
  * Last modification date : 10 october 2018
@@ -13,7 +13,7 @@
  * A very simple JSON lint interface, no server-side processing, everything
  * done by Javascript
  *
- * @link https://stackoverflow.com/a/7220510/1065340 for the color output
+ * @see https://stackoverflow.com/a/7220510/1065340 for the color output
  *
  * jQuery plugin for showing JSON with expand / collapse feature
  * @see https://github.com/bazh/jquery.json-view
@@ -62,6 +62,23 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
             <div class="page-header"><h1>JSONLint & Pretty print</h1></div>
             <div class="container">
                 <div class="form-group">
+                    <details>
+						<summary>How to use?</summary>
+						<div class="row">
+								<div class="col-sm">
+									<ul>
+										<li>Copy/Paste your JSON content in the textbox below.</li>
+                                        <li>Make a choice between "HTML with colors" and "With expand/collapse feature"</li>
+										<li>Click on the Lint button</li>
+									</ul>
+								</div>
+								<div class="col-sm">
+									<img height="300px" src="https://raw.githubusercontent.com/cavo789/jsonlint/master/images/demo.gif" alt="Demo">
+								</div>
+							</div>
+						</div>
+					</details>
+
                     <label for="json">Copy/Paste your JSON content in the textbox below then click on the Lint button:</label>
                     <textarea class="form-control" rows="5" id="json" name="json"><?php echo $json; ?></textarea>
                 </div>
@@ -172,6 +189,7 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
                 try {
                     var $JSON = JSON.parse($json);// And now, display
 
+                    $('#Result').empty();
                     if ($optFeature=='expand') {
                         $('#Result').jsonView(JSON.stringify($JSON, undefined, 2));
                     } else {
