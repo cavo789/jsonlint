@@ -177,26 +177,28 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
                 computed: {
                     HTML() {
                         // Initialization
-                        this.allow = true;
+                        this.allow = (this.JSON !== '');
                         this.errors = [];
 
-                        try {
-                            // Convert as an array
-                            var $JSON = JSON.parse(this.JSON);
-                        } catch (error) {
-                            // Ouch, an error has been encountered.
-                            // The JSON wasn't valid (f.i. {name:"John"} instead of {"name":"John"}))
-                            // Try to solve thanks the eval() statement
+                        if (this.JSON !== '') {
                             try {
-                                this.JSON = JSON.stringify(eval('('+this.JSON+')'));
-
-                                // Not in the catch statement? Ok, we've a valid JSON now
-                                $JSON = JSON.parse(this.JSON);
+                                // Convert as an array
+                                var $JSON = JSON.parse(this.JSON);
                             } catch (error) {
-                                // Still with errors (f.i. {name:John} )
-                                // Capture the error and don't allow the linting
-                                this.errors.push(error.message);
-                                this.allow = false;
+                                // Ouch, an error has been encountered.
+                                // The JSON wasn't valid (f.i. {name:"John"} instead of {"name":"John"}))
+                                // Try to solve thanks the eval() statement
+                                try {
+                                    this.JSON = JSON.stringify(eval('('+this.JSON+')'));
+
+                                    // Not in the catch statement? Ok, we've a valid JSON now
+                                    $JSON = JSON.parse(this.JSON);
+                                } catch (error) {
+                                    // Still with errors (f.i. {name:John} )
+                                    // Capture the error and don't allow the linting
+                                    this.errors.push(error.message);
+                                    this.allow = false;
+                                }
                             }
                         }
 

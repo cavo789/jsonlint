@@ -12,19 +12,17 @@ Just copy/paste your JSON string into the text box as illustrated here below.
 
 Make a choice between: do you want a HTML return with things put in colors (keys and values) or a hierarchic view where you'll be able to collapse or expand levels.
 
-When the choice is made, press the `Lint` button.
+Linting will be made automatically; without the need to click on a button.
 
 ![jsonlint](images/demo.gif)
 
 ### Invalid JSON
 
-When the string is invalid like in `{hello:"world","places":["Africa","America","Asia","Australia"]}` (keys are not inside double-quotes), the interface will notify you about the error and suggest to, first, make an `eval()`.
+When the string is invalid like in `{hello:"world","places":["Africa","America","Asia","Australia"]}` (keys are not inside double-quotes), the interface try to solve this issue by itself. If successfull, the JSON will be rewritten and, then, linted.
 
-![invalid](images/invalid.png)
+## Full javascript
 
-By clicking once more on the `Lint` button, Javascript will thus first `eval()` the string and try to convert it in a valid JSON object. If this can be done, the input string will be updated to the correct value and you'll get the pretty version.
-
-Note: except for displaying the form (with PHP), everything is done on client side by Javascript. There is no more interaction with your server once the form is displayed.
+Everything is done on client side by Javascript. There is no more interaction with your server once the form is displayed.
 
 ## Helpers
 
