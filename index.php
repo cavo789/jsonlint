@@ -65,7 +65,12 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
             <div class="page-header"><h1>JSONLint & Pretty print</h1></div>
             <div class="container" id="app">
                 <div class="form-group">
-                    <how-to-use demo="https://raw.githubusercontent.com/cavo789/jsonlint/master/images/demo.gif"></how-to-use>
+                    <how-to-use demo="https://raw.githubusercontent.com/cavo789/jsonlint/master/images/demo.gif">
+                        <ul>
+                            <li>Copy/Paste your JSON content in the textbox below.</li>
+                            <li>Make a choice between "HTML with colors" or "With expand/collapse feature"</li>                                        
+                        </ul>
+                    </how-to-use>
                     <label for="JSON">Copy/Paste your JSON content in the textbox below, linting will be made automatically:</label>
                     <textarea class="form-control" rows="5" name="JSON" v-model="JSON"></textarea>
                 </div>
@@ -143,10 +148,7 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
                         <summary>How to use?</summary>
                         <div class="row">
                             <div class="col-sm">
-                                <ul>
-                                    <li>Copy/Paste your JSON content in the textbox below.</li>
-                                    <li>Make a choice between "HTML with colors" or "With expand/collapse feature"</li>                                        
-                                </ul>
+                                <slot></slot>
                             </div>
                             <div class="col-sm"><img v-bind:src="demo" alt="Demo"></div>
                         </div>
