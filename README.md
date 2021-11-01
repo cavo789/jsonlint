@@ -1,6 +1,6 @@
-![banner](images/banner.jpg)
-
 # jsonlint
+
+![banner](./banner.svg)
 
 JSONLint is a simple and fast interface to check the quality of a JSON string and display it in a readable and colorful format.
 
